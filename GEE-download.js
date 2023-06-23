@@ -308,7 +308,7 @@ var BUFFER = 50
 
 function get_s2_sr_cld_col(aoi, start_date, end_date) {
     // # Import and filter S2 SR.
-    var s2_sr_col = (ee.ImageCollection('COPERNICUS/S2_SR')
+    var s2_sr_col = (ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED')
         .filterBounds(aoi)
         .filterDate(start_date, end_date)
         .filter(ee.Filter.lte('CLOUDY_PIXEL_PERCENTAGE', CLOUD_FILTER)))
